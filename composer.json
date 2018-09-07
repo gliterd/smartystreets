@@ -23,12 +23,12 @@
     },
     "autoload": {
         "psr-4": {
-            "SmartyStreet\\": "src/"
+            "SmartyStreets\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "SmartyStreet\\Tests\\": "tests/"
+            "SmartyStreets\\Tests\\": "tests/"
         }
     },
     "scripts": {
