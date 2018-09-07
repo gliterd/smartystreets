@@ -33,11 +33,15 @@ class Service
 
     public function getInspectedLocation($location)
     {
-        if ($this->getSimulation()) {
-            return new Location($this->getSampleLocation());
-        }
+        try {
+            if ($this->getSimulation()) {
+                return new Location($this->getSampleLocation());
+            }
 
-        return new Location($this->getRequest(new Lookup($location)));
+            return new Location($this->getRequest(new Lookup($location)));
+        } catch(\Exception $e) {
+            return 'Error: ' .$e->getMessage();
+        }
     }
 
     public function getRequest(Lookup $location)
