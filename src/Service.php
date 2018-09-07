@@ -8,7 +8,18 @@ use GuzzleHttp\Client;
 
 class Service
 {
+    protected $authId;
+
+    protected $authToken;
+
     private $simulation = false;
+
+    public function __construct($authId, $authToken, $simulation = false)
+    {
+        $this->authId = $authId;
+        $this->authToken = $authToken;
+        $this->setSimulation($simulation);
+    }
 
     public function setSimulation($value)
     {
@@ -36,8 +47,8 @@ class Service
         ]);
         $response = $client->request('GET', 'verify', [
             'query' => [
-                'auth-id'     => env('SMARTY_STREETS_AUTH_ID'),
-                'auth-token'  => env('SMARTY_STREETS_AUTH_TOKEN'),
+                'auth-id'     => $this->authId,
+                'auth-token'  => $this->authToken,
                 'address1'    => $location->getStreet().' '.$location->getStreetNumber(),
                 'locality'    => $location->getPlace(),
                 'postal_code' => $location->getPostcode(),
