@@ -69,19 +69,19 @@ class Service
     protected function getSampleLocation()
     {
         return [
-            'address1'   => 'Birgistrasse 10',
-            'address2'   => '8304 Wallisellen',
+            'address1'   => 'Vulkanstrasse 106',
+            'address2'   => '8010 Zurich',
             'components' => [
 
                 'administrative_area'     => 'ZH',
-                'sub_administrative_area' => 'Bülach',
+                'sub_administrative_area' => 'Zurich',
                 'country_iso_3'           => 'CHE',
-                'locality'                => 'Wallisellen',
+                'locality'                => 'Vulkanstrasse',
                 'postal_code'             => '8304',
                 'postal_code_short'       => '8304',
                 'premise'                 => '10',
                 'premise_number'          => '10',
-                'thoroughfare'            => 'Birgistrasse',
+                'thoroughfare'            => 'Vulkanstrasse',
 
             ],
             'metadata' => [

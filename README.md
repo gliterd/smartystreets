@@ -29,6 +29,24 @@ Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recen
 $ composer test
 ```
 
+## How to use it?
+
+```
+<?php
+
+require_once('vendor/autoload.php');
+
+use \SmartyStreets\Service;
+
+$service = new Service('your-auth-id', 'your-auth-token');
+
+$location = $service->getInspectedLocation([
+    'street'        => 'Vulkanstrasse',
+    'street_number' => '106',
+    'place'         => 'Zurich',
+    'postal_code'   => '8010',
+]);
+```
 
 ## Contributing
 
